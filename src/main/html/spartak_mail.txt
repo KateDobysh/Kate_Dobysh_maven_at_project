@@ -1,0 +1,2 @@
+//img[@alt='логотип Спартак']
+//h3[@class='main-head' and contains(text(), 'Новинки')]
