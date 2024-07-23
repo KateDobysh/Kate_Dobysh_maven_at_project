@@ -1,2 +1,5 @@
 //img[@alt='логотип Спартак']
 //h3[@class='main-head' and contains(text(), 'Новинки')]
+
+//img[@alt='Mail.ru']
+//span[@class='ph-project__text svelte-df8yjz' and contains(text(), 'Все проекты']
