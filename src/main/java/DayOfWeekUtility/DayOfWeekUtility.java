@@ -4,8 +4,7 @@ import java.time.LocalDateTime;
 
 public class DayOfWeekUtility {
 
-
-    private static String getDayOfWeekNextYear(int plusYears) {
+    public static String getDayOfWeekNextYear(int plusYears) {
 
         LocalDateTime ldt = LocalDateTime.now().plusYears(plusYears);
         int year = ldt.getYear();
@@ -15,7 +14,7 @@ public class DayOfWeekUtility {
         if (year % 4 == 0 && year % 100 != 0) {
             if (dayNumber == 6 || dayNumber == 7) {
                 return String.format("%s is Weekend of Leap Year!", dayValue);
-            } else{
+            } else {
                 return String.format("%s is working day of Leap Year :(", dayValue);
             }
 
