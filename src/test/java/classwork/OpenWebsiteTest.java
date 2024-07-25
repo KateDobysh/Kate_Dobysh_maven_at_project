@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.net.MalformedURLException;
 
-public class ClassworkTests {
+public class OpenWebsiteTest {
     public static void main(String[] args) throws MalformedURLException {
 //        WebDriver driver = new ChromeDriver();
         WebDriver driver = new ChromeDriver();
