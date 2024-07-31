@@ -12,9 +12,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.concurrent.locks.Condition;
 
-public class BookingTest {
+public class BookingParis {
     public static void main(String[] args) {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-search-engine-choice-screen");
@@ -32,7 +31,7 @@ public class BookingTest {
             if (signInOrRegister.isDisplayed()) {
                 driver.findElement(By.xpath("//div[@role='dialog']//*[@aria-label='Dismiss sign-in info.']")).click();
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println("Modal didn't appear" + e.getMessage());
         }
         WebElement searchField = driver.findElement(By.xpath("//div[@id='indexsearch']//*[@placeholder='Where are you going?']"));
@@ -52,7 +51,7 @@ public class BookingTest {
             if (signInOrRegister.isDisplayed()) {
                 driver.findElement(By.xpath("//div[@role='dialog']//*[@aria-label='Dismiss sign-in info.']")).click();
             }
-        }catch(Exception e) {
+        } catch (Exception e) {
             System.out.println("Modal didn't appear" + e.getMessage());
         }
 
@@ -73,10 +72,16 @@ public class BookingTest {
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.findElement(By.xpath("//button[@data-testid='occupancy-config']")).click();
-        driver.findElement(By.xpath("//div[@data-testid='occupancy-popup']//div[1]//button[2]")).click();
-        driver.findElement(By.xpath("//div[@data-testid='occupancy-popup']//div[1]//button[2]")).click();
-        driver.findElement(By.xpath("//div[@data-testid='occupancy-popup']//div[3]//button[2]")).click();
+
+        WebElement numberOfPeople = driver.findElement(By.xpath("//div[@data-testid='occupancy-popup']//div[1]//button[2]"));
+        numberOfPeople.click();
+        numberOfPeople.click();
+
+        WebElement numberOfRooms = driver.findElement(By.xpath("//div[@data-testid='occupancy-popup']//div[3]//button[2]"));
+        numberOfRooms.click();
+
         driver.findElement(By.xpath("//div[@data-testid='occupancy-popup']//*[text()='Done']")).click();
+
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
         try {
             signInOrRegister = waitModal.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@role='dialog']")));
@@ -84,7 +89,7 @@ public class BookingTest {
             if (signInOrRegister.isDisplayed()) {
                 driver.findElement(By.xpath("//div[@role='dialog']//*[@aria-label='Dismiss sign-in info.']")).click();
             }
-        }catch(Exception e) {
+        } catch (Exception e) {
             System.out.println("Modal didn't appear" + e.getMessage());
         }
         driver.findElement(By.xpath("//div[@data-testid='searchbox-layout-wide']//button[@type='submit']")).click();
@@ -92,6 +97,7 @@ public class BookingTest {
         WebDriverWait waitCheckbox = new WebDriverWait(driver, Duration.ofSeconds(5));
         WebElement checkBoxAppeared = waitCheckbox.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='popular-filters-go-here']//preceding-sibling::div[@data-testid='filters-sidebar']//div[@data-filters-group='ht_id']//div[text()='Hotels']")));
         checkBoxAppeared.click();
+
         WebDriverWait waitHotelRateCheckbox = new WebDriverWait(driver, Duration.ofSeconds(5));
         WebElement checkBoxHotelRateAppeared = waitHotelRateCheckbox.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='filter_group_review_score_:r22:']//div[@data-filters-item='review_score:review_score=90'][1]//label[@for=':r23:']//span[2]")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", checkBoxHotelRateAppeared);
@@ -99,7 +105,6 @@ public class BookingTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.findElement(By.xpath("//div[@id='filter_group_class_:r2m:']//div[13]//span[2]")).click();
         driver.findElement(By.xpath("//button[@data-testid='sorters-dropdown-trigger']//span[1]")).click();
-        driver.findElement(By.xpath("Price (lowest first)")).click();
-
-        }
+        driver.findElement(By.xpath("//*[@Price (lowest first)]")).click();
     }
+}
