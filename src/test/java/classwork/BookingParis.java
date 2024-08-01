@@ -71,31 +71,39 @@ public class BookingParis {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", nextDate);
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        driver.findElement(By.xpath("//button[@data-testid='occupancy-config']")).click();
+        driver.findElement(By
+                .xpath("//button[@data-testid='occupancy-config']")).click();
 
-        WebElement numberOfPeople = driver.findElement(By.xpath("//div[@data-testid='occupancy-popup']//div[1]//button[2]"));
+        WebElement numberOfPeople = driver.findElement(By
+                .xpath("//div[@data-testid='occupancy-popup']//div[1]//button[2]"));
         numberOfPeople.click();
         numberOfPeople.click();
 
-        WebElement numberOfRooms = driver.findElement(By.xpath("//div[@data-testid='occupancy-popup']//div[3]//button[2]"));
+        WebElement numberOfRooms = driver.findElement(By
+                .xpath("//div[@data-testid='occupancy-popup']//div[3]//button[2]"));
         numberOfRooms.click();
 
-        driver.findElement(By.xpath("//div[@data-testid='occupancy-popup']//*[text()='Done']")).click();
+        driver.findElement(By
+                .xpath("//div[@data-testid='occupancy-popup']//*[text()='Done']")).click();
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
         try {
-            signInOrRegister = waitModal.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@role='dialog']")));
+            signInOrRegister = waitModal.until(ExpectedConditions.visibilityOfElementLocated(By
+                    .xpath("//div[@role='dialog']")));
 
             if (signInOrRegister.isDisplayed()) {
-                driver.findElement(By.xpath("//div[@role='dialog']//*[@aria-label='Dismiss sign-in info.']")).click();
+                driver.findElement(By
+                        .xpath("//div[@role='dialog']//*[@aria-label='Dismiss sign-in info.']")).click();
             }
         } catch (Exception e) {
             System.out.println("Modal didn't appear" + e.getMessage());
         }
-        driver.findElement(By.xpath("//div[@data-testid='searchbox-layout-wide']//button[@type='submit']")).click();
+        driver.findElement(By
+                .xpath("//div[@data-testid='searchbox-layout-wide']//button[@type='submit']")).click();
 
         WebDriverWait waitCheckbox = new WebDriverWait(driver, Duration.ofSeconds(5));
-        WebElement checkBoxAppeared = waitCheckbox.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='popular-filters-go-here']//preceding-sibling::div[@data-testid='filters-sidebar']//div[@data-filters-group='ht_id']//div[text()='Hotels']")));
+        WebElement checkBoxAppeared = waitCheckbox.until(ExpectedConditions.visibilityOfElementLocated(By
+                .xpath("//div[@id='popular-filters-go-here']//preceding-sibling::div[@data-testid='filters-sidebar']//div[@data-filters-group='ht_id']//div[text()='Hotels']")));
         checkBoxAppeared.click();
 
         WebDriverWait waitHotelRateCheckbox = new WebDriverWait(driver, Duration.ofSeconds(5));
