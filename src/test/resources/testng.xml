@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Suite">
+    <test name="Tests">
+        <classes>
+            <class name="tests.BookingCurrencyTest"/>
+            <class name="tests.BookingLondonTest"/>
+            <class name="tests.BookingParisTest"/>
+            <class name="tests.BookingPragueTest"/>
+            <class name="tests.DemoqaDropdownSelectTest"/>
+            <class name="tests.GetTemperatureOutsideFirefoxTest"/>
+            <class name="tests.GoogleElementsTest"/>
+            <class name="tests.OpenSeleniumDevTest"/>
+            <class name="tests.NavigateFromBookingToYaTest"/>
+        </classes>
+    </test>
+</suite>

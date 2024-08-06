@@ -29,7 +29,5 @@ public class BookingCurrency {
         Actions hoverOverTheLanguage = new Actions(driver);
         hoverOverTheLanguage.moveToElement(languageIcon);
         hoverOverTheLanguage.perform();
-
-
     }
 }

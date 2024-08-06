@@ -1,4 +1,4 @@
-package DayOfWeekUtility;
+package dayOfWeekUtility;
 
 import java.time.LocalDateTime;
 
