@@ -10,7 +10,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.time.Duration;
 
-public class TutorialTask {
+public class W3Schools {
     public static void main(String[] args) {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-search-engine-choice-screen");
@@ -29,7 +29,5 @@ public class TutorialTask {
         driver.findElement(By.xpath("//textarea[@title='Szukaj']")).click();
         make.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).perform();
         make.sendKeys(Keys.ENTER).perform();
-
-
     }
 }

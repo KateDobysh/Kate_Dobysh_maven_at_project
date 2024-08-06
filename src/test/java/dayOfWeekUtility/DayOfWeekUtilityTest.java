@@ -1,4 +1,4 @@
-package DayOfWeekUtility;
+package dayOfWeekUtility;
 
 import org.junit.Assert;
 import org.junit.Test;

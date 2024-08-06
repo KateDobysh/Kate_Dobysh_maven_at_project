@@ -1,0 +1,15 @@
+suite:
+  name: Suite
+  tests:
+    - name: Tests
+      classes:
+        - tests.BookingCurrencyTest
+        - tests.BookingLondonTest
+        - tests.BookingParisTest
+        - tests.BookingPragueTest
+        - tests.DemoqaDropdownSelectTest
+        - tests.GetTemperatureOutsideChromeTest
+        - tests.GetTemperatureOutsideFirefoxTest
+        - tests.GoogleElementsTest
+        - tests.OpenWebsiteTest
+        - tests.SearchNavigationTest
