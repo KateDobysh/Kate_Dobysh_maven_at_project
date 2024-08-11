@@ -8,5 +8,4 @@ import tests.BookingCurrencyTest;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({BookingCurrencyTest.class})
 public class JUnitTestRunner{
-
 }

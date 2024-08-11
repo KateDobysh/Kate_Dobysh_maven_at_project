@@ -13,6 +13,7 @@ public class BookingCurrency {
     public static void main(String[] args) {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-search-engine-choice-screen");
+        options.addArguments("--no-first-run");
         WebDriver driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.manage().window().maximize();

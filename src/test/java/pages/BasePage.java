@@ -15,8 +15,8 @@ public class BasePage {
         this.driver = Driver.getDriver();
     }
 
-    public WebElement waitElementIsVisible(WebElement element) {
-        new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT)).until(ExpectedConditions.visibilityOf(element));
-        return element;
-    }
+//    public WebElement waitElementIsVisible(WebElement element) {
+//        new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT)).until(ExpectedConditions.visibilityOf(element));
+//        return element;
+//    }
 }

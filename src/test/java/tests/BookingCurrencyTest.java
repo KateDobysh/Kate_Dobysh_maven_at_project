@@ -5,10 +5,11 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.BookingCurrencyPage;
-
-import static pages.BookingCurrencyPage.*;
+import static pages.BookingCurrencyPage.CURRENCY_HOVER_MESSAGE;
+import static pages.BookingCurrencyPage.LANGUAGE_HOVER_MASSAGE;
 
 public class BookingCurrencyTest extends BasePageTest{
 
@@ -17,36 +18,36 @@ public class BookingCurrencyTest extends BasePageTest{
     @Before
     public void setUp(){
         Driver.getDriver();
-        bookingCurrencyPage = new BookingCurrencyPage();
+        bookingCurrencyPage = new BookingCurrencyPage(Driver.getDriver());
     }
 
     @Test
     public void currencyIconExists(){
         bookingCurrencyPage.open("https://www.booking.com/");
-        WebElement currencyIcon = driver.findElement(By.xpath(CURRENCY_ICON_XPATH));
-        Assert.assertTrue("Currency icon exists on the page", currencyIcon.isDisplayed());
+        bookingCurrencyPage.currencyIconOnThePage();
+        Assert.assertTrue("Language icon exists on the page", bookingCurrencyPage.currencyIconOnThePage());
     }
 
-//    @Test
-//    public void currencyIconCanBeHovered(){
-//        bookingCurrencyPage.open("https://www.booking.com/");
-//        bookingCurrencyPage.hoverOverTheCurrency();
-//        WebElement hoverCurrencyText = driver.findElement(By.xpath(CURRENCY_HOVER_MESSAGE));
-//        Assert.assertTrue("Hovering works well", hoverCurrencyText.isDisplayed());
-//    }
+    @Test
+    public void currencyIconCanBeHovered(){
+        bookingCurrencyPage.open("https://www.booking.com/");
+        bookingCurrencyPage.hoverOverTheCurrency();
+        WebElement hoverCurrencyText = driver.findElement(By.xpath(CURRENCY_HOVER_MESSAGE));
+        Assert.assertTrue("Hovering works well", hoverCurrencyText.isDisplayed());
+    }
 
     @Test
     public void languageIconExists(){
         bookingCurrencyPage.open("https://www.booking.com/");
-        WebElement languageIcon = driver.findElement(By.xpath(LANGUAGE_ICON_XPATH));
-        Assert.assertTrue("Language icon exists on the page", languageIcon.isDisplayed());
+        bookingCurrencyPage.currencyIconOnThePage();
+        Assert.assertTrue("Language icon exists on the page", bookingCurrencyPage.languageIconOnThePage());
     }
 
-//    @Test
-//    public void languageIconCanBeHovered() {
-//        bookingCurrencyPage.open("https://www.booking.com/");
-//        bookingCurrencyPage.hoverOverTheLanguage();
-//        WebElement hoverLanguageText = driver.findElement(By.xpath(LANGUAGE_HOVER_MASSAGE));
-//        Assert.assertTrue("Hovering works well", hoverLanguageText.isDisplayed());
-//    }
+    @Test
+    public void languageIconCanBeHovered() {
+        bookingCurrencyPage.open("https://www.booking.com/");
+        bookingCurrencyPage.hoverOverTheLanguage();
+        WebElement hoverLanguageText = driver.findElement(By.xpath(LANGUAGE_HOVER_MASSAGE));
+        Assert.assertTrue("Hovering works well", hoverLanguageText.isDisplayed());
+    }
 }

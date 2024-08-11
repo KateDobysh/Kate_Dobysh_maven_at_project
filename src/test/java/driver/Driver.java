@@ -5,16 +5,20 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Driver {
-    static WebDriver driver;
+    private static WebDriver driver;
 
     public static WebDriver getDriver() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-search-engine-choice-screen");
+        if (driver == null) {
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--disable-search-engine-choice-screen");
+//            options.addArguments("--headless");
+            options.addArguments("--disable-web-security");
+//            options.addArguments("user-data-dir=/path/to/clean/profile");
+            options.addArguments("--remote-debugging-port=9222");
 
-        if (null == driver) {
-            driver = new ChromeDriver();
+            driver = new ChromeDriver(options);
+            driver.manage().window().maximize(); // Максимизируем окно
         }
-
         return driver;
     }
 }
