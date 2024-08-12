@@ -12,7 +12,7 @@ import java.time.Duration;
 
 public class BookingCurrencyPage extends BasePage {
 
-    private static final Logger logger = LogManager.getLogger(BookingCurrencyPage.class.getName());
+    private static final Logger logger = LogManager.getLogger(BookingCurrencyPage.class);
     private WebDriver driver;
 
     public BookingCurrencyPage(WebDriver driver) {

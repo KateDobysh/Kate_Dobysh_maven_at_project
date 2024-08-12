@@ -12,7 +12,7 @@ import org.apache.logging.log4j.Logger;
 
 public class BookingStep {
 
-    private static final Logger logger = LogManager.getLogger(BookingStep.class.getName());
+    private static final Logger logger = LogManager.getLogger(BookingStep.class);
     private WebDriver driver;
     private BookingCurrencyPage bookingCurrencyPage;
 
