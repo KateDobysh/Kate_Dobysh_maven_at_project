@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 
-public class ParsingTask {
+public class ParsingRecipe {
 
     ObjectMapper objectMapper = new ObjectMapper();
 
@@ -23,7 +23,7 @@ public class ParsingTask {
     }
 
     public static void main(String[] args) throws IOException {
-        ParsingTask objectMapper = new ParsingTask();
+        ParsingRecipe objectMapper = new ParsingRecipe();
         objectMapper.toJson();
         objectMapper.fromJson();
     }

@@ -18,6 +18,5 @@ public class WebServiceTest {
                 .post()
                 .then()
                 .extract().body().as(Data.class).getData().get(0).equals(BaseSteps.getUser(name));
-
     }
 }
