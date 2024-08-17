@@ -1,5 +1,7 @@
-package classwork_webservice;
+package pages;
 
+import classwork_webservice.Ingredient;
+import classwork_webservice.Recipe;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
