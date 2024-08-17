@@ -1,5 +1,8 @@
-package classwork_webservice;
+package tests;
 
+import classwork_webservice.BaseSteps;
+import classwork_webservice.Data;
+import classwork_webservice.Search;
 import io.restassured.RestAssured;
 import org.junit.Test;
 
@@ -17,6 +20,7 @@ public class WebServiceTest {
                 .when()
                 .post()
                 .then()
+                .statusCode(200)
                 .extract().body().as(Data.class).getData().get(0).equals(BaseSteps.getUser(name));
     }
 }

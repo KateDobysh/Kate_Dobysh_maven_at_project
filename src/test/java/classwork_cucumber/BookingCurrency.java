@@ -1,4 +1,4 @@
-package classwork;
+package classwork_cucumber;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
