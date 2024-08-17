@@ -4,11 +4,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
+import static io.restassured.RestAssured.given;
 
 public class BaseSteps {
     public static final RequestSpecification REQUEST_SPECIFICATION = new RequestSpecBuilder()
@@ -33,5 +36,18 @@ public class BaseSteps {
         return data.data.stream()
                 .filter(user -> user.username.equalsIgnoreCase(name))
                 .findFirst().get();
+    }
+
+    public static User getUserFromApi(String username) {
+        Response response = given()
+                .spec(REQUEST_SPECIFICATION)
+                .queryParam("username", username)
+                .when()
+                .get("/search")
+                .then()
+                .statusCode(200)
+                .extract().response();
+
+        return response.jsonPath().getObject("[0]", User.class);
     }
 }

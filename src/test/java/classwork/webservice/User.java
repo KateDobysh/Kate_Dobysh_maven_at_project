@@ -35,11 +35,11 @@ public class User {
         this.username = username;
     }
 
-    public String getRealname() {
+    public String getRealName() {
         return realname;
     }
 
-    public void setRealname(String realname) {
+    public void setRealName(String realName) {
         this.realname = realname;
     }
 
@@ -57,5 +57,16 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", username='" + username + '\'' +
+                ", realname='" + realname + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
