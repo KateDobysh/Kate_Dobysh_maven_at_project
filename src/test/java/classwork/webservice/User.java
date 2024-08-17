@@ -1,4 +1,4 @@
-package classwork_webservice;
+package classwork.webservice;
 
 public class User {
     public String id;

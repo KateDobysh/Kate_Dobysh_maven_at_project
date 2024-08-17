@@ -10,13 +10,13 @@ public class BasePageTest {
 
     static WebDriver driver = Driver.getDriver();
 
-    @BeforeClass
-    public static void initDriver(){
-        WebDriver driver = new ChromeDriver();
-    }
+//    @BeforeClass
+//    public static void initDriver(){
+//        WebDriver driver = new ChromeDriver();
+//    }
     @AfterClass
     public static void closeDriver(){
-        driver.quit();
+        Driver.quitDriver();
     }
 
 

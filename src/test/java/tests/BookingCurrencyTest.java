@@ -17,7 +17,7 @@ public class BookingCurrencyTest extends BasePageTest{
     @Before
     public void setUp(){
         Driver.getDriver();
-        bookingCurrencyPage = new BookingCurrencyPage(Driver.getDriver());
+        bookingCurrencyPage = new BookingCurrencyPage();
     }
 
     @Test

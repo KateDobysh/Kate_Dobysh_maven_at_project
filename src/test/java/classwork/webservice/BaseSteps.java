@@ -1,4 +1,4 @@
-package classwork_webservice;
+package classwork.webservice;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.builder.RequestSpecBuilder;

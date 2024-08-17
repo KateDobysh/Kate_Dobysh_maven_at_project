@@ -1,4 +1,4 @@
-package classwork_webservice;
+package classwork.webservice;
 
 import java.util.List;
 

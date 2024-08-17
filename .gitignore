@@ -11,6 +11,8 @@ target/
 *.iws
 *.iml
 *.ipr
+**/db.properties
+**/baz_log.json
 
 ### Eclipse ###
 .apt_generated
