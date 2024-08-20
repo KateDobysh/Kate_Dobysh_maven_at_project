@@ -1,4 +1,4 @@
-package tests;
+package classwork.webservice;
 
 import classwork.webservice.BaseSteps;
 import classwork.webservice.Data;

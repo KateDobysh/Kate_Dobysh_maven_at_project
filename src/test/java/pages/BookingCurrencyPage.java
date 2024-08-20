@@ -12,12 +12,11 @@ import java.time.Duration;
 
 public class BookingCurrencyPage extends BasePage {
 
-    private static final Logger logger = LogManager.getLogger(BookingCurrencyPage.class);
-    private WebDriver driver;
+    private static final Logger LOGGER = LogManager.getLogger(BookingCurrencyPage.class);
 
-    public BookingCurrencyPage(WebDriver driver) {
-        this.driver = driver;
-    }
+//    public BookingCurrencyPage(WebDriver driver) {
+//        this.driver = driver;
+//    }
 
     public static final String CURRENCY_ICON_XPATH = ("//button[@data-testid='header-currency-picker-trigger']");
     public static final String LANGUAGE_ICON_XPATH = ("//img[@src='https://t-cf.bstatic.com/design-assets/assets/v3.122.0/images-flags/Us@3x.png']");
@@ -25,43 +24,43 @@ public class BookingCurrencyPage extends BasePage {
     public static final String LANGUAGE_HOVER_MASSAGE = ("//*[text()='Select your language']");
 
     public void open(String url) {
-        logger.info("Opening URL: {}", url);
+        LOGGER.info("Opening URL: {}", url);
         driver.get(url);
     }
 
     public boolean currencyIconOnThePage(){
-        logger.debug("Checking if currency icon is displayed on the page");
+        LOGGER.debug("Checking if currency icon is displayed on the page");
         WebElement currencyIcon = driver.findElement(By.xpath(CURRENCY_ICON_XPATH));
         boolean isDisplayed = currencyIcon.isDisplayed();
-        logger.info("Currency icon displayed: {}", isDisplayed);
+        LOGGER.info("Currency icon displayed: {}", isDisplayed);
         return currencyIcon.isDisplayed();
     }
 
     public void hoverOverTheCurrency() {
-        logger.info("Hovering over the currency icon");
+        LOGGER.info("Hovering over the currency icon");
         WebElement currencyIcon = driver.findElement(By.xpath(CURRENCY_ICON_XPATH));
         Actions hoverOverTheCurrency = new Actions(driver);
         hoverOverTheCurrency.moveToElement(currencyIcon).perform();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(CURRENCY_HOVER_MESSAGE)));
-        logger.debug("Finished hovering over the currency icon");
+        LOGGER.debug("Finished hovering over the currency icon");
     }
 
     public boolean languageIconOnThePage(){
-        logger.debug("Checking if language icon is displayed on the page");
+        LOGGER.debug("Checking if language icon is displayed on the page");
         WebElement languageIcon = driver.findElement(By.xpath(LANGUAGE_ICON_XPATH));
         boolean isDisplayed = languageIcon.isDisplayed();
-        logger.info("Language icon displayed: {}", isDisplayed);
+        LOGGER.info("Language icon displayed: {}", isDisplayed);
         return languageIcon.isDisplayed();
     }
 
     public void hoverOverTheLanguage() {
-        logger.info("Hovering over the language icon");
+        LOGGER.info("Hovering over the language icon");
         WebElement languageIcon = driver.findElement(By.xpath(LANGUAGE_ICON_XPATH));
         Actions hoverOverTheLanguage = new Actions(driver);
         hoverOverTheLanguage.moveToElement(languageIcon).perform();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(LANGUAGE_HOVER_MASSAGE)));
-        logger.debug("Finished hovering over the language icon");
+        LOGGER.debug("Finished hovering over the language icon");
     }
 }

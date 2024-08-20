@@ -1,4 +1,4 @@
-package classwork_webservice;
+package classwork.webservice;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
@@ -9,7 +9,7 @@ public class ExtractedUsers {
     private ObjectMapper objectMapper = new ObjectMapper();
 
     public void fromJson() throws IOException {
-        UserWrapper userWrapper = objectMapper.readValue(new File("src/test/resources/users.json"), UserWrapper.class);
+        classwork.webservice.UserWrapper userWrapper = objectMapper.readValue(new File("src/test/resources/users.json"), UserWrapper.class);
 
         List<User> users = userWrapper.getData();
 

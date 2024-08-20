@@ -1,19 +1,10 @@
-package classwork_webservice;
+package classwork.webservice;
 
 import java.util.List;
 
-public class Data {
-    public String code;
-    public List<User> data;
-
-    public Data(String code, List<User> data) {
-        this.code = code;
-        this.data = data;
-    }
-
-    public Data() {
-
-    }
+public class UserWrapper {
+    private String code;
+    private List<User> data;
 
     public String getCode() {
         return code;

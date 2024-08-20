@@ -1,8 +1,8 @@
 package tests;
 
-import classwork_webservice.User;
-import classwork_webservice.UserService;
-import classwork_webservice.UserWrapper;
+import classwork.webservice.User;
+import classwork.webservice.UserService;
+import classwork.webservice.UserWrapper;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
 import org.junit.Test;

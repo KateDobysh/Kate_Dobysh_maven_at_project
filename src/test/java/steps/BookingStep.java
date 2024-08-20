@@ -3,6 +3,7 @@ package steps;
 import driver.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.After;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import pages.BookingCurrencyPage;
@@ -13,15 +14,14 @@ import org.apache.logging.log4j.Logger;
 public class BookingStep {
 
     private static final Logger logger = LogManager.getLogger(BookingStep.class);
-    private WebDriver driver;
     private BookingCurrencyPage bookingCurrencyPage;
 
     @Given("Open booking website")
     public void open_booking_website() {
 
         logger.info("Initializing the WebDriver and opening the Booking website");
-        driver = Driver.getDriver();
-        bookingCurrencyPage = new BookingCurrencyPage(driver);
+        WebDriver driver = Driver.getDriver();
+//        bookingCurrencyPage = new BookingCurrencyPage(driver);
 
         String url = "https://www.booking.com/";
         bookingCurrencyPage.open(url);
