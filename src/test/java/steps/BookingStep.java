@@ -20,8 +20,8 @@ public class BookingStep {
     public void open_booking_website() {
 
         logger.info("Initializing the WebDriver and opening the Booking website");
-        WebDriver driver = Driver.getDriver();
-//        bookingCurrencyPage = new BookingCurrencyPage(driver);
+//        WebDriver driver = Driver.getDriver();
+        bookingCurrencyPage = new BookingCurrencyPage();
 
         String url = "https://www.booking.com/";
         bookingCurrencyPage.open(url);
