@@ -14,5 +14,4 @@ public class BasePage {
     public BasePage() {
         this.driver = Driver.getDriver();
     }
-
 }

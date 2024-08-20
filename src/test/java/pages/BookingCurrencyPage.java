@@ -14,10 +14,6 @@ public class BookingCurrencyPage extends BasePage {
 
     private static final Logger LOGGER = LogManager.getLogger(BookingCurrencyPage.class);
 
-//    public BookingCurrencyPage(WebDriver driver) {
-//        this.driver = driver;
-//    }
-
     public static final String CURRENCY_ICON_XPATH = ("//button[@data-testid='header-currency-picker-trigger']");
     public static final String LANGUAGE_ICON_XPATH = ("//img[@src='https://t-cf.bstatic.com/design-assets/assets/v3.122.0/images-flags/Us@3x.png']");
     public static final String CURRENCY_HOVER_MESSAGE = ("//*[text()='Select your currency']");
@@ -63,4 +59,5 @@ public class BookingCurrencyPage extends BasePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(LANGUAGE_HOVER_MASSAGE)));
         LOGGER.debug("Finished hovering over the language icon");
     }
+
 }
