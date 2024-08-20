@@ -1,6 +1,6 @@
 package pages;
 
-import classwork_webservice.User;
+import classwork.webservice.User;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import java.io.FileReader;
